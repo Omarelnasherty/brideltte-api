@@ -1,0 +1,27 @@
+RewriteEngine On
+RewriteBase /api/
+
+# Allow direct access to uploads
+RewriteRule ^uploads/ - [L]
+
+# Route all requests to index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [QSA,L]
+
+# Security headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "DENY"
+    Header set X-XSS-Protection "1; mode=block"
+</IfModule>
+
+# Deny access to sensitive files
+<FilesMatch "\.(php|sql|md)$">
+    <IfModule mod_authz_core.c>
+        # Apache 2.4
+    </IfModule>
+</FilesMatch>
+
+# Prevent directory listing
+Options -Indexes

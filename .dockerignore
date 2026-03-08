@@ -1,0 +1,4 @@
+schema.sql
+schema_hosting.sql
+*.md
+.git

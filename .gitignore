@@ -1,0 +1,7 @@
+uploads/vendors/*
+uploads/avatars/*
+uploads/reviews/*
+!uploads/vendors/.gitkeep
+!uploads/avatars/.gitkeep
+!uploads/reviews/.gitkeep
+rate_limits/

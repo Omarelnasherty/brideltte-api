@@ -2,7 +2,7 @@
 // Application Configuration
 define('APP_NAME', 'Brideltte API');
 define('APP_VERSION', '1.0.0');
-define('APP_ENV', 'production'); // 'development' or 'production'
+define('APP_ENV', 'development'); // 'development' or 'production'
 
 // JWT Configuration
 define('JWT_SECRET', 'brideltte_jwt_secret_key_change_in_production_2024');
